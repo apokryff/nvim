@@ -1,7 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
+    event = "BufWritePre", -- uncomment for format on save
     opts = require "configs.conform",
   },
 
@@ -12,14 +12,23 @@ return {
       require "configs.lspconfig"
     end,
   },
-
   {
-  	"nvim-treesitter/nvim-treesitter",
-  	opts = {
-  		ensure_installed = {
-  			"vim", "lua", "vimdoc",
-       "html", "css", "terraform"
-  		},
-  	},
+    "windwp/nvim-ts-autotag",
+    event = "VeryLazy",
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+  },
+  {
+    "stevearc/dressing.nvim",
+    lazy = false,
+    opts = {},
+  },
+  {
+    "mfussenegger/nvim-lint",
+    event = "VeryLazy",
+    config = function()
+      require "configs.lint"
+    end,
   },
 }

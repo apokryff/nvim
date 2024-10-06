@@ -119,7 +119,12 @@ map("n", "<leader>cc", function()
   end
 end, { desc = "blankline jump to current context" })
 
-map("n", "<leader>Q", "<cmd> q <cr>", {desc = "Close Neovim"})
+-- Mason
+map("n", "<leader>pp", "<cmd>Mason <CR>", { desc = "Plugins" })
+map("n", "<leader>pi", "<cmd>MasonInstallAll <CR>", { desc = "Install Plugins" })
+map("n", "<leader>pu", "<cmd>MasonUpdate <CR>", { desc = "Update Plugins" })
+
+map("n", "<leader>Q", "<cmd> q <cr>", { desc = "Close Neovim" })
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
