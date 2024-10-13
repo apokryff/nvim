@@ -1,7 +1,6 @@
 -- This file needs to have same structure as nvconfig.lua
 -- https://github.com/NvChad/ui/blob/v2.5/lua/nvconfig.lua
 -- Please read that file to know all available options :(
-
 ---@type ChadrcConfig
 local M = {}
 
@@ -19,26 +18,46 @@ M.mason = {
     "easy-coding-standard",
   },
 }
+M.nvdash = {
+  load_on_startup = true,
+  header = {
+    " █████  ██████   ██████  ██   ██ ██████  ██    ██ ███████ ",
+    "██   ██ ██   ██ ██    ██ ██  ██  ██   ██  ██  ██  ██      ",
+    "███████ ██████  ██    ██ █████   ██████    ████   █████   ",
+    "██   ██ ██      ██    ██ ██  ██  ██   ██    ██    ██      ",
+    "██   ██ ██       ██████  ██   ██ ██   ██    ██    ██      ",
+    "                                                          ",
+  },
+  buttons = {
+    { txt = "  Start Working", keys = "", cmd = "enew" },
+    { txt = "  Recent Files", keys = "Spc f o", cmd = "Telescope oldfiles" },
+    { txt = "  Find File", keys = "Spc f f", cmd = "Telescope find_files" },
+    { txt = "󰑑  Find Word", keys = "Spc f w", cmd = "Telescope live_grep" },
+    -- { txt = "  Bookmarks", keys = "Spc b m", cmd = "Telescope marks" },
+    -- { txt = "  Themes", keys = "Spc t h", cmd = "Telescope themes" },
+    { txt = "  Mappings", keys = "Spc n m", cmd = "NvCheatsheet" },
+
+    { txt = "─", hl = "NvDashLazy", no_gap = true, rep = true },
+
+    {
+      txt = function()
+        local stats = require("lazy").stats()
+        local ms = math.floor(stats.startuptime) .. " ms"
+        return "  Loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms
+      end,
+      hl = "NvDashLazy",
+      no_gap = true,
+    },
+
+    { txt = "─", hl = "NvDashLazy", no_gap = true, rep = true },
+  },
+}
+
 M.base46 = {
   theme = "kanagawa",
   transparency = true,
   statusline = {
     theme = "vscode_colored",
-  },
-  nvdash = {
-    load_on_startup = true,
-    header = {
-      header = {},
-    },
-    buttons = {
-      { "  Start Working", "", "enew" },
-      { "  Recent Files", "Spc f o", "Telescope oldfiles" },
-      { "  Find File", "Spc f f", "Telescope find_files" },
-      { "󰑑  Find Word", "Spc f w", "Telescope live_grep" },
-      -- { "  Bookmarks", "Spc b m", "Telescope marks" },
-      -- { "  Themes", "Spc t h", "Telescope themes" },
-      { "  Mappings", "Spc n m", "NvCheatsheet" },
-    },
   },
 
   hl_override = {

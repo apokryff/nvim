@@ -15,7 +15,7 @@ local servers = {
   "terraformls",
   "tflint",
   "ansiblels",
-  "tsserver",
+  "ts_ls",
   "emmet_ls",
   "intelephense",
 }
