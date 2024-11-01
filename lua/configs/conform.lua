@@ -7,6 +7,7 @@ local options = {
     typescript = { "prettier" },
     tf = { "tflint" },
     php = { "intelephense" },
+    c = { "clang-format" },
   },
 
   format_on_save = {

@@ -6,7 +6,6 @@ local M = {}
 
 M.mason = {
   pkgs = {
-    "lua-language-server",
     "stylua",
     "html-lsp",
     "css-lsp",
@@ -16,6 +15,9 @@ M.mason = {
     "black",
     "isort",
     "easy-coding-standard",
+    "clang-format",
+    "cpplint",
+    "codelldb",
   },
 }
 M.nvdash = {
@@ -28,14 +30,15 @@ M.nvdash = {
     "██   ██ ██       ██████  ██   ██ ██   ██    ██    ██      ",
     "                                                          ",
   },
+
   buttons = {
-    { txt = "  Start Working", keys = "", cmd = "enew" },
+    { txt = "  Start Working", keys = "Spc b", cmd = "enew" },
     { txt = "  Recent Files", keys = "Spc f o", cmd = "Telescope oldfiles" },
     { txt = "  Find File", keys = "Spc f f", cmd = "Telescope find_files" },
     { txt = "󰑑  Find Word", keys = "Spc f w", cmd = "Telescope live_grep" },
-    -- { txt = "  Bookmarks", keys = "Spc b m", cmd = "Telescope marks" },
-    -- { txt = "  Themes", keys = "Spc t h", cmd = "Telescope themes" },
-    { txt = "  Mappings", keys = "Spc n m", cmd = "NvCheatsheet" },
+    { txt = "  Bookmarks", keys = "Spc b m", cmd = "Telescope marks" },
+    { txt = "  Themes", keys = "Spc t h", cmd = "Telescope themes" },
+    -- { txt = "  Mappings", keys = "Spc n m", cmd = "NvCheatsheet" },
 
     { txt = "─", hl = "NvDashLazy", no_gap = true, rep = true },
 
@@ -48,8 +51,6 @@ M.nvdash = {
       hl = "NvDashLazy",
       no_gap = true,
     },
-
-    { txt = "─", hl = "NvDashLazy", no_gap = true, rep = true },
   },
 }
 
