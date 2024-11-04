@@ -178,7 +178,10 @@ map("jk", "<ESC>", { mode = "i" })
 map("<C-s>", "<cmd> w <cr>", { mode = { "n", "i", "v" } })
 
 -- DAP
-map("<Leader>d", "", { desc = "Debugger" })
+map("<Leader>d", "", { group = "Debugger", icon = {
+  icon = "󰃤",
+  color = "purple",
+} })
 map("<Leader>dl", "<cmd>lua require'dap'.step_into()<CR>", { desc = "Debugger step into" })
 map("<Leader>dj", "<cmd>lua require'dap'.step_over()<CR>", { desc = "Debugger step over" })
 map("<Leader>dk", "<cmd>lua require'dap'.step_out()<CR>", { desc = "Debugger step out" })

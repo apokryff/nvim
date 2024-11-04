@@ -1,25 +1,32 @@
 local M = {}
-
+local CPPDBG_BIN = vim.fn.stdpath "data" .. "/mason/bin/OpenDebugAD7"
+-- Функция для запуска codelldb в фоновом режиме
+print(CPPDBG_BIN)
 M.adapter = {
+  id = "cppdbg",
   type = "executable",
-  command = "codelldb",
-  args = { "--interpreter=dap", "--eval-command", "set print pretty on" },
+  command = CPPDBG_BIN,
+  args = {},
 }
 
 M.config = {
   {
     name = "Launch",
-    type = "codelldb",
+    type = "cppdbg",
     request = "launch",
     program = function()
+      -- start_codelldb()
       return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
     end,
+    -- program = '${fileDirname}/${fileBasenameNoExtension}',
     cwd = "${workspaceFolder}",
-    stopAtBeginningOfMainSubprogram = false,
+    stopOnEntry = false,
+    runInTerminal = true,
+    args = {},
   },
   {
     name = "Select and attach to process",
-    type = "codelldb",
+    type = "cppdbg",
     request = "attach",
     program = function()
       return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
@@ -31,14 +38,15 @@ M.config = {
     cwd = "${workspaceFolder}",
   },
   {
-    name = "Attach to gdbserver :1234",
-    type = "codelldb",
+    name = "Attach to gdbserver :13000",
+    type = "cppdbg",
     request = "attach",
-    target = "localhost:1234",
+    target = "localhost:13000",
     program = function()
       return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
     end,
     cwd = "${workspaceFolder}",
+    terminal = "integrated",
   },
 }
 

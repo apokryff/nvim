@@ -8,6 +8,7 @@ local options = {
     tf = { "tflint" },
     php = { "intelephense" },
     c = { "clang-format" },
+    bash = { "beautysh" },
   },
 
   format_on_save = {
