@@ -1,7 +1,6 @@
 local M = {}
 local CPPDBG_BIN = vim.fn.stdpath "data" .. "/mason/bin/OpenDebugAD7"
--- Функция для запуска codelldb в фоновом режиме
-print(CPPDBG_BIN)
+
 M.adapter = {
   id = "cppdbg",
   type = "executable",
@@ -15,7 +14,6 @@ M.config = {
     type = "cppdbg",
     request = "launch",
     program = function()
-      -- start_codelldb()
       return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
     end,
     -- program = '${fileDirname}/${fileBasenameNoExtension}',

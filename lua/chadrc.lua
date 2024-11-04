@@ -10,7 +10,6 @@ M.mason = {
     "html-lsp",
     "css-lsp",
     "prettier",
-    "ruff",
     "easy-coding-standard",
     "clang-format",
     "cpplint",
@@ -19,6 +18,10 @@ M.mason = {
     "bash-debug-adapter",
     "shellcheck",
     "beautysh",
+    "debugpy",
+    "black",
+    "pylint",
+    "pyright",
   },
 }
 M.nvdash = {

@@ -9,6 +9,7 @@ local options = {
     php = { "intelephense" },
     c = { "clang-format" },
     bash = { "beautysh" },
+    python = { "black" },
   },
 
   format_on_save = {

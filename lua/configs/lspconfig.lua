@@ -12,7 +12,7 @@ local servers = {
   "bashls",
   "jsonls",
   "dockerls",
-  "ruff",
+  "pyright",
   "terraformls",
   "tflint",
   "ansiblels",
