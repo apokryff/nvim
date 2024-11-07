@@ -5,7 +5,7 @@ local lspconfig = require "lspconfig"
 
 -- LSP server
 local servers = {
-  "lua-language-server",
+  "lua_ls",
   "html",
   "cssls",
   "yamlls",
