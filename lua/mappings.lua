@@ -38,9 +38,19 @@ map("<C-c>", "<cmd>%y+<CR>", { desc = "General Copy whole file" })
 
 -- UI
 map("<leader>u", nil, { group = "UI", desc = "UI" })
-map("<leader>ut", "<cmd>set nu!<CR>", { desc = "Toggle line number" })
-map("<leader>ur", "<cmd>set rnu!<CR>", { desc = "Toggle relative number" })
+map("<leader>un", nil, { group = "Numbers", desc = "Numbers" })
+
+map("<leader>unt", "<cmd>set nu!<CR>", { desc = "Toggle line number" })
+map("<leader>unr", "<cmd>set rnu!<CR>", { desc = "Toggle relative number" })
 map("<leader>uc", "<cmd>NvCheatsheet<CR>", { desc = "Toggle nvcheatsheet" })
+map(
+  "<leader>ut",
+  "<cmd>Telescope themes<CR>",
+  { desc = "Change themes", icon = {
+    icon = " ",
+    color = "azure",
+  } }
+)
 
 -- global lsp mappings
 map("<leader>l", nil, { group = "LSP", icon = {
