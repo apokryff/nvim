@@ -20,7 +20,7 @@ local servers = {
   "emmet_ls",
   "intelephense",
   "clangd",
-  
+  "ts_ls",
 }
 local nvlsp = require "nvchad.configs.lspconfig"
 

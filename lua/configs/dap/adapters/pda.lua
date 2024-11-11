@@ -1,6 +1,6 @@
 local M = {}
 local PHPDEBUG_ADAPTER_BIN = vim.fn.stdpath "data" .. "/mason/bin/php-debug-adapter"
-print(PHPDEBUG_ADAPTER_BIN)
+
 M.adapter = {
   id = "php",
   type = "executable",
