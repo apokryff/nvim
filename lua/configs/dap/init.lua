@@ -8,6 +8,9 @@ local cppdbg = require "configs.dap.adapters.cppdbg"
 local bda = require "configs.dap.adapters.bda"
 local pdb = require "configs.dap.adapters.pdb"
 local pda = require "configs.dap.adapters.pda"
+local jsda = require "configs.dap.adapters.jsda"
+
+jsda.setup(dap)
 
 dap.adapters.cppdbg = cppdbg.adapter
 dap.adapters.sh = bda.adapter

@@ -24,6 +24,7 @@ M.mason = {
     "pyright",
     "php-debug-adapter",
     "eslint_d",
+    "js-debug-adapter",
   },
 }
 
