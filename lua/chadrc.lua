@@ -25,6 +25,7 @@ M.mason = {
     "php-debug-adapter",
     "eslint_d",
     "js-debug-adapter",
+    "chrome-debug-adapter",
   },
 }
 

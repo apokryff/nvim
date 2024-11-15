@@ -1,45 +1,55 @@
 local M = {}
 
 M.js_based_languages = { "javascript", "typescript" }
+
 M.adapters = {
   {
     id = "pwa-node",
     type = "server",
     host = "localhost",
-    port = 3000,
+    port = 9229,
     command = "js-debug-adapter",
   },
   {
     id = "pwa-chrome",
     type = "server",
     host = "localhost",
-    port = 3000,
-    command = "chrome-debug-adapter",
+    port = 9229,
+    executable = {
+      command = "js-debug-adapter",
+      args = {
+        "9229",
+      },
+    },
   },
 }
 
 M.config = {
   {
     type = "pwa-node",
-    request = "launch",
-    name = "Launch file",
-    program = "${file}",
-    cwd = "${workspaceFolder}",
-  },
-  {
-    type = "pwa-node",
     request = "attach",
-    name = "Attach",
     processId = require("dap.utils").pick_process,
+    name = "Attach debugger to existing `node --inspect` process",
+    sourceMaps = true,
+    resolveSourceMapLocations = {
+      "${workspaceFolder}/**",
+      "!**/node_modules/**",
+    },
     cwd = "${workspaceFolder}",
+    skipFiles = { "${workspaceFolder}/node_modules/**/*.js" },
   },
   {
     type = "pwa-chrome",
+    name = "Launch Chrome to debug client",
     request = "launch",
-    name = 'Start Chrome with "localhost"',
-    url = "localhost:9229",
+    url = function()
+      return vim.fn.input("Enter the URL to debug: ", "http://localhost:3000")
+    end,
+    sourceMaps = true,
+    protocol = "inspector",
     webRoot = "${workspaceFolder}",
-    -- userDataDir = "${workspaceFolder}/.vscode/vscode-chrome-debug-userdatadir",
+    runtimeExecutable = "/usr/bin/vivaldi",
+    skipFiles = { "**/node_modules/**/*", "<node_internals>/**", "**/webpack/**/*.js" },
   },
 }
 
