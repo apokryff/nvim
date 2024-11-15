@@ -13,7 +13,3 @@ local o = vim.opt
 o.relativenumber = true
 
 o.cursorlineopt = "both" -- to enable cursorline!
-
-require("noice").setup {
-  presets = {},
-}
