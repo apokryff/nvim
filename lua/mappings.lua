@@ -204,3 +204,8 @@ map(
 )
 map("<Leader>de", "<cmd>lua require'dap'.terminate()<CR>", { desc = "Debugger reset" })
 map("<Leader>dr", "<cmd>lua require'dap'.run_last()<CR>", { desc = "Debugger run last" })
+
+-- AI
+map("<Leader>a", "", { group = "AI" })
+map("<Leader>ac", "<cmd>CodeCompanionChat<CR>", { desc = "AI actions" })
+map("<Leader>aa", "<cmd>CodeCompanionAction<CR>", { desc = "AI chat" })

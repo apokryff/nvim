@@ -126,4 +126,8 @@ return {
       image_support = false,
     },
   },
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    ft = { "markdown", "codecompanion" },
+  },
 }
