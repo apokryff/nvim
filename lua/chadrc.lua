@@ -64,7 +64,7 @@ M.nvdash = {
 }
 
 M.base46 = {
-  theme = "kanagawa",
+  theme = "catppuccin",
   transparency = true,
   statusline = {
     theme = "vscode_colored",
