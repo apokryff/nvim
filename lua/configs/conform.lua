@@ -10,6 +10,7 @@ local options = {
     c = { "clang-format" },
     bash = { "beautysh" },
     python = { "black" },
+    nix = {"alejandra"},
   },
 
   format_on_save = {

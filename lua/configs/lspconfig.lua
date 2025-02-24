@@ -21,6 +21,7 @@ local servers = {
   "intelephense",
   "clangd",
   "ts_ls",
+  "nil",
 }
 local nvlsp = require "nvchad.configs.lspconfig"
 

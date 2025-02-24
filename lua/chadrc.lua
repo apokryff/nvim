@@ -26,6 +26,8 @@ M.mason = {
     "eslint_d",
     "js-debug-adapter",
     "chrome-debug-adapter",
+    "nil",
+    "alejandra",
   },
 }
 
